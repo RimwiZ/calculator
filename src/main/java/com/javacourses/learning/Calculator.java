@@ -4,20 +4,11 @@ import static com.javacourses.learning.MathExecutor.doMath;
 
 public class Calculator {
 
-    protected static int leftValue;
-    static int rightValue;
-    static String operator;
-
     public static void main(String[] args) {
-        readParameters(args);
-        doMath(leftValue, rightValue, operator);
-    }
+        Parameters parameters = null;
 
-    public static Object[] readParameters(String[] args) {
         try {
-            leftValue = Integer.parseInt(args[0]);
-            rightValue = Integer.parseInt(args[1]);
-            operator = args[2];
+            parameters = readParameters(args);
         } catch (NumberFormatException e) {
             System.out.println("Error. The first 2 arguments must be integers.");
             System.exit(1);
@@ -25,6 +16,13 @@ public class Calculator {
             System.out.println("Error. Program expects 3 parameters to be passed.");
             System.exit(1);
         }
-        System.out.println("Given parameters: " + leftValue + " " + rightValue + " " + operator);
+
+
+
+        doMath(parameters);
+    }
+
+    static Parameters readParameters(String[] args) {
+        return new Parameters(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2]);
     }
 }

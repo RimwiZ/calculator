@@ -27,26 +27,15 @@ class CalculatorShould {
 
     @Test
     public void successfullyReadParameters() {
-        //setup
-        String[] input = { "1", "2", "+" };
+        Parameters parameters = readParameters(new String[]{"1", "2", "+"});
 
-        //execute
-        readParameters(input);
-
-        //verify
-        assertEquals(Calculator.leftValue, Integer.parseInt(input[0]));
-        assertEquals(Calculator.rightValue, Integer.parseInt(input[1]));
-        assertEquals(Calculator.operator, input[2]);
+        assertEquals(1, parameters.getLeftValue());
+        assertEquals(2, parameters.getRightValue());
+        assertEquals("+", parameters.getOperator());
     }
 
     @Test
     public void throwExceptionIfLessThan3ParametersArePassed() {
-        String[] input = { "1", "2" };
-        String text = readParameters(input);
-        assertEquals("text", text);
-//        assertThrows(ArrayIndexOutOfBoundsException.class, () -> readParameters(input));
-//        assertEquals(Calculator.leftValue, Integer.parseInt(input[0]));
-//        assertEquals(Calculator.rightValue, Integer.parseInt(input[1]));
-//        assertEquals(Calculator.operator, input[2]);
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> readParameters(new String[]{"1", "2"}));
     }
 }
