@@ -4,16 +4,16 @@ import static com.javacourses.learning.MathExecutor.doMath;
 
 public class Calculator {
 
-    private static int leftValue;
-    private static int rightValue;
-    private static String operator;
+    protected static int leftValue;
+    static int rightValue;
+    static String operator;
 
     public static void main(String[] args) {
         readParameters(args);
         doMath(leftValue, rightValue, operator);
     }
 
-    public static void readParameters(String[] args) {
+    public static Object[] readParameters(String[] args) {
         try {
             leftValue = Integer.parseInt(args[0]);
             rightValue = Integer.parseInt(args[1]);
