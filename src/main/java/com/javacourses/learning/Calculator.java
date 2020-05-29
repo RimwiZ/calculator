@@ -17,8 +17,6 @@ public class Calculator {
             System.exit(1);
         }
 
-
-
         doMath(parameters);
     }
 
