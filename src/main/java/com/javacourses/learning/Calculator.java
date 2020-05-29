@@ -17,10 +17,26 @@ public class Calculator {
             System.exit(1);
         }
 
-        doMath(parameters);
+        Number result = 0;
+        try {
+            result = doMath(parameters);
+        } catch (ArithmeticException e) {
+            System.out.println("Error. Result exceeds Integer range [-2147483648 .. 2147483647]");
+            System.exit(1);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
+
+        printResult(result);
+
     }
 
     static Parameters readParameters(String[] args) {
         return new Parameters(Integer.parseInt(args[0]), Integer.parseInt(args[1]), args[2]);
+    }
+
+    private static void printResult(Number result) {
+        System.out.println("Result: " + result);
     }
 }
