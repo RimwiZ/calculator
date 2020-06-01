@@ -1,30 +1,19 @@
 package com.javacourses.learning;
 
 public class Calculation {
-    private static int intResult;
-    private static double doubleResult;
-
-    public static int add(int leftValue, int rightValue) {
-        intResult = Math.addExact(leftValue, rightValue);
-        System.out.println("Result: " + intResult);
-        return intResult;
+    public static Number add(int leftValue, int rightValue) {
+        return Math.addExact(leftValue, rightValue);
     }
 
-    public static int subtract(int leftValue, int rightValue) {
-        intResult = Math.subtractExact(leftValue, rightValue);
-        System.out.println("Result: " + intResult);
-        return intResult;
+    public static Number subtract(int leftValue, int rightValue) {
+        return Math.subtractExact(leftValue, rightValue);
     }
 
-    public static int multiply(int leftValue, int rightValue) {
-        intResult = Math.multiplyExact(leftValue, rightValue);
-        System.out.println("Result: " + intResult);
-        return intResult;
+    public static Number multiply(int leftValue, int rightValue) {
+        return Math.multiplyExact(leftValue, rightValue);
     }
 
-    public static double divide(int leftValue, int rightValue) {
-        doubleResult = (double) leftValue / rightValue;
-        System.out.println("Result: " + doubleResult);
-        return doubleResult;
+    public static Number divide(int leftValue, int rightValue) {
+        return (double) leftValue / rightValue;
     }
 }
