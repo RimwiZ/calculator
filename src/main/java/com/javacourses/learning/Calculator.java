@@ -1,11 +1,10 @@
 package com.javacourses.learning;
 
-import static com.javacourses.learning.MathExecutor.doMath;
-
 public class Calculator {
 
     public static void main(String[] args) {
         Parameters parameters = null;
+        MathExecutor mathExecutor = new MathExecutor(new Calculation());
 
         try {
             parameters = readParameters(args);
@@ -19,7 +18,7 @@ public class Calculator {
 
         Number result = 0;
         try {
-            result = doMath(parameters);
+            result = mathExecutor.doMath(parameters);
         } catch (ArithmeticException e) {
             System.out.println("Error. Result exceeds Integer range [-2147483648 .. 2147483647]");
             System.exit(1);
