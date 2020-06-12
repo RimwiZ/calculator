@@ -23,19 +23,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.7.0-M1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -107,6 +95,9 @@
                     <verbose>false</verbose>
                     <mutationThreshold>80</mutationThreshold>
                     <timestampedReports>false</timestampedReports>
+                    <excludedClasses>
+                        <excludedClass>com.javacourses.learning.Calculator</excludedClass>
+                    </excludedClasses>
                 </configuration>
                 <executions>
                     <execution>
