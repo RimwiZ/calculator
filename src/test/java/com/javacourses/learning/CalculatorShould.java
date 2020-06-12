@@ -38,4 +38,9 @@ class CalculatorShould {
     public void throwExceptionIfLessThan3ParametersArePassed() {
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> readParameters(new String[]{"1", "2"}));
     }
+
+    @Test
+    public void throwExceptionIfFirstTwoParametersAreNotIntegers() {
+        assertThrows(NumberFormatException.class, () -> readParameters(new String[]{"1.5", "2.5", "-"}));
+    }
 }
