@@ -8,13 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculationShould {
 
-//    private MathExecutor mathExecutor;
     private Calculation calculation;
 
     @BeforeEach
     void setUp() {
         calculation = new Calculation();
-//        mathExecutor = new MathExecutor(calculation);
     }
 
     @Test
